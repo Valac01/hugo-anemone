@@ -4,7 +4,7 @@
 name = "Anemone"
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
+description = "A simple custom theme for my site"
 homepage = "http://example.com/"
 tags = []
 features = []
@@ -13,3 +13,5 @@ min_version = "0.41.0"
 [author]
   name = "Barish Barla"
   homepage = "barishbarla.com"
+
+enableRobotsTXT = true

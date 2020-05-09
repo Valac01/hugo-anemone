@@ -1,0 +1,6 @@
+{{ .Scratch.Add "imgPath" (slice .Site.Params.HeroImgDir) }}
+{{ .Scratch.Add "imgPath" (slice .Params.Index_image) }}
+<img class="post__hero-image" src='{{ delimit (.Scratch.Get "imgPath") "/" }}'>
+
+<!-- TODO: Add a default image when nothing is given as hero image -->
+<!-- TODO: Add some effect in the image maybe -->

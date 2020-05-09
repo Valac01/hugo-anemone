@@ -1,0 +1,5 @@
+{{ $scssOpt := (dict "targetpath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true )}}
+{{ $css := resources.Get "scss/main.scss" | toCSS $scssOpt | postCSS }}
+
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+<!-- integriti: Data Integrity -->

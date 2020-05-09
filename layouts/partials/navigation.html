@@ -1,0 +1,28 @@
+<nav class="nav">
+  <svg id="hamburger-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="19" viewBox="0 0 24 19">
+    <g id="menu" transform="translate(0 1.5)">
+      <line id="Line_1" data-name="Line 1" x2="24" stroke-width="3"/>
+      <line id="Line_2" data-name="Line 2" x2="24" transform="translate(0 8)" stroke-width="3"/>
+      <line id="Line_3" data-name="Line 3" x2="24" transform="translate(0 16)" stroke-width="3"/>
+    </g>
+  </svg>
+  <div class="brand">
+    {{ if .Site.Params.Logo }}
+    <img id="logo" src='{{ (resources.Get .Site.Params.Logo ).Permalink }}' alt="Logo">
+    {{ end }}
+  </div>
+  <!-- Navigation actions -->
+  <div class="nav__actions"x-data="{open: false}">
+    <div class="nav__links">
+    </div>
+    <div class="nav__search" x-show="open">
+      <input type="text" class="search" placeholder="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+      </svg>
+    </div>
+  </div>
+  <!-- Mobile Navigation page -->
+  <div class="nav__mobile">
+  </div>
+</nav>

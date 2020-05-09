@@ -1,0 +1,12 @@
+input {
+  box-sizing: border-box;
+  border: none;
+}
+
+.search {
+  background-color: scale-color($color: #ffffff, $lightness: -10%);
+  height: 100%;
+  font-family: "Nunito Sans";
+  color: $dark-color;
+  padding: 8px 12px;
+}

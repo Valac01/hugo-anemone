@@ -1,0 +1,8 @@
+<footer>
+  {{- partial "copyright.html" . -}}
+  {{ $heart := resources.Get "icons/heart.png"}}
+  <div class="credits">
+    <p class="caption">Created with <a href="https:gohugo.io" target="_blank">Hugo</a> and some</p>
+    <img src="{{ $heart.Permalink }}" alt="heart icon">
+  </div>
+</footer>

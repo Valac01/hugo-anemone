@@ -1,0 +1,35 @@
+{
+  "name": "anemone",
+  "version": "0.1.0",
+  "description": "Hugo theme build for my personal website",
+  "scripts": {
+    "js:watch": "parcel watch src-assets/js/*.js --out-dir assets/js",
+    "js:build": "parcel build src-assets/js/*.js --out-dir assets/js",
+    "dev": "concurrently \"npm run js:watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valac01/anemone.git"
+  },
+  "keywords": [
+    "Hugo",
+    "Theme"
+  ],
+  "author": "Valac01",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Valac01/anemone/issues"
+  },
+  "homepage": "https://github.com/Valac01/anemone#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "concurrently": "^5.2.0",
+    "parcel-bundler": "^1.12.4",
+    "postcss-normalize": "^9.0.0"
+  },
+  "dependencies": {
+    "alpinejs": "^2.3.1",
+    "clipboard": "^2.0.6",
+    "prismjs": "^1.20.0"
+  }
+}

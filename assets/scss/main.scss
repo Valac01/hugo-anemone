@@ -1,0 +1,132 @@
+@import './variables';
+@import './normalize';
+@import './code';
+@import './typography';
+@import './buttons';
+@import './forms';
+
+body {
+  background-color: $bg-color;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: max-content max-content max-content;
+}
+
+.nav {
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #{$secondary}38;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+
+  #hamburger-menu {
+    stroke: $dark-color;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .brand {
+    height: 40px;
+    padding: 0 15px;
+    cursor: pointer;
+  }
+  
+  #logo {
+    height: inherit;
+  }
+
+  &__actions {
+    justify-items: right;
+    margin-left: auto;
+  }
+  &__search {
+    padding: 10px;
+    cursor: pointer;
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
+
+// Blog post
+.post {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: max-content max-content;
+
+  &__hero-image {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 44vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__body {
+    box-sizing: border-box;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-self: center;
+    width: 98%;
+    margin-top: -42px;
+    background-color: #fff;
+    border: 1px solid #{$secondary}38;
+    border-top: 4px solid $secondary;
+    padding: 24px 14px;
+    border-radius: 4px;
+    .date-time {
+      padding-top: 10px;
+      border-top: 2px solid $primary;
+    }
+    a:hover {
+      color: $primary;
+    }
+    img {
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+}
+
+.list {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  div {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+  }
+}
+
+
+.not-found {
+  height: calc(100vh - 50px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 16px 16px 80px 16px;
+  box-sizing: border-box;
+}
+
+footer {
+  justify-self: center;
+  text-align: center;
+  a {
+    color: $primary;
+  }
+  .credits {
+    display: flex;
+    align-items: center;
+  }
+  p {
+    margin-right: 0.8ch;
+  }
+}

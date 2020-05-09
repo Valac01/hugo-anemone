@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main class="post">
+  {{- partial "img-hero.html" . -}}
+  <section class="post__body">
+    <div class="tags">
+      {{ range (.GetTerms "tags") }}
+      <a href="{{ .Permalink }}" class="overline">{{ .LinkTitle }}</a><span class="overline">&nbsp;/&nbsp;</span>
+      {{ end }}
+    </div>
+    <h1>{{- .Title -}}</h1>
+    <span class="date-time">{{ .Date.Format "01 Jan, 2006"}} &bull; {{ .ReadingTime }} min read</span>
+    {{ .Content }}
+  </section>
+</main>
+{{ end }}

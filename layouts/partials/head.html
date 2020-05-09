@@ -1,5 +1,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <base href="{{ .Site.BaseURL }}"/>
+  {{- hugo.Generator -}}
+  {{ partial "style.html" . }}
+  <meta name="theme-color" content="{{ .Site.Params.ThemeColor }}">
+  {{ if isset .Params "title" }}
+  <title>{{ .Page.Title }}</title>
+  {{ else }}
+  <title>{{ .Site.Title }}</title>
+  {{ end }}
+  {{ if isset .Params "description" }}
+  <meta name="description" content="{{ .Page.Description }}">
+  {{ end }}
+  
+  <!-- scripts -->
+  <!-- TODO: make the ads script availble only to blog pages -->
+  {{ if .IsPage }}
+  <script data-ad-client="ca-pub-4426506017940242" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  {{ end }}
+
+  {{ partial "head-scripts" . }}
+  <!-- favicons -->
+  <link rel="shortcut icon" href="{{ .Site.BaseURL }}/favicons/favicon.ico" type="image/x-icon" >
+  <link rel="icon" href="{{ .Site.BaseURL }}/favicons/favicon.png" sizes="128x128" type="image/x-icon" >
+
+  <!-- TODO: change the site title to the post title when a post is open -->
 </head>

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Spectral:ital,wght@0,400;0,600;1,600&display=swap');
+
+//TODO: Make font sizes more responsive with changing the html, body font size;
+
+$h1: 3em; 
+$h2: 2.6em;
+$h3: 2.2em;
+$h4: 1.8em;
+$h5: 1.4em;
+$h6: 1em;
+$p: 1em;
+
+// TODO: Make class for caption opverline Btn subtitle
+html, body {
+  font-size: 16px;
+  color: $dark-color;
+}
+
+// Reset a tags 
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+@mixin base-font($size, $height: 6rem, $weight: 600, $font: "Spectral") {
+  @if $font == "Spectral" {
+    font-family: $font, serif;
+  } @else if $font == "Nunito Sans" {
+    font-family: $font, sans-serif;
+  }
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: 0em;
+  line-height: $height;
+  margin-bottom: $height * 0.6;
+}
+
+h1 {
+  @include base-font($h1, $h1 * 0.4);
+  margin-top: 0.8rem;
+}
+h2 {
+  @include base-font($h2, $h2 * 0.4);
+}
+h3 {
+  @include base-font($h3, $h3 * 0.4);
+}
+h4 {
+  @include base-font($h4, $h4 * 0.4);
+}
+h5 {
+  @include base-font($h5, $h5 * 0.4);
+}
+h6 {
+  @include base-font($h6, $h6 * 0.4);
+}
+p {
+  @include base-font($p, 1.6em, 400, "Nunito Sans");
+}
+
+li {
+  font-size: $p;
+  font-family: "Nunito Sans"
+}
+
+// code {
+//   color: #f8f8f8;
+//   background: #333;
+// }
+.caption {
+  @include base-font(0.75em, 2rem, 400, "Nunito Sans");
+}
+
+.overline {
+  @include base-font(0.8em, 2rem, 600, "Nunito Sans");
+}
+
+.date-time {
+  @include base-font(1em, 2rem, 600, "Nunito Sans" );
+  letter-spacing: 0.68px;
+}
+
+@media (min-width: $sm) {
+}

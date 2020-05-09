@@ -1,0 +1,2 @@
+{{ $alpine := resources.Get "js/alpine.js"}}
+<script src='{{ $alpine.RelPermalink }}' type="text/javascript"></script>
