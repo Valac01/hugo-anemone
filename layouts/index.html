@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anemone</title>
-</head>
-<body>
-  
-</body>
-</html>
+{{- define "main" -}}
+  {{ partial "hero.html" . }}
+  <div>
+    <section>
+      <h3>Latest Blog Posts</h3>
+      <!-- show latest 3 notes -->
+      {{- with .Site.GetPage "/posts" -}}
+      {{- range $page := first 3 .Pages -}}
+      {{- partial "card.html" . -}}
+      {{- end -}}
+      {{- end -}}
+    </section>
+    <section>
+      <h3>Latest Notes</h3>
+      <!-- show latest 3 notes -->
+      {{- with .Site.GetPage "/notes" -}}
+      {{- range $page := first 3 .Pages -}}
+      {{- partial "card.html" . -}}
+      {{- end -}}
+      {{- end -}}
+    </section>
+    <section>
+      <h3>Latest Drafts</h3>
+      <!-- show latest 3 drafts post -->
+      {{- with .Site.GetPage "/drafts" -}}
+      {{- range $page := first 3 .Pages -}}
+      {{- partial "card.html" . -}}
+      {{- end -}}
+      {{- end -}}
+    </section>
+  </div>
+{{- end -}}

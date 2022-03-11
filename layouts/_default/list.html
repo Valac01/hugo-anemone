@@ -1,0 +1,26 @@
+{{- partial "header.html" . -}}
+
+<!-- Setting Page variable -->
+{{ $pages := .Pages }}
+
+<!-- Index contents -->
+<section>
+  <h1>{{ .Title }}</h1>
+  <div>
+    {{ .Content }}
+  </div>
+</section>
+
+<!-- List section -->
+<section>
+  {{ range $page := .Paginator.Pages }}
+  <div><a href="{{ $page.Permalink }}"><span>{{- $page.Title -}}</span></a></div>
+  <div>{{ $page.Date.Format "Jan 2, 2006" }}</div>
+  {{ with $page.Params.cover}}
+  <img src="{{$page.Params.cover}}" alt="" srcset="">
+  {{end}}
+  {{ end }}
+  {{ template "_internal/pagination.html" . }}
+</section>
+
+{{ partial "footer.html" . }}

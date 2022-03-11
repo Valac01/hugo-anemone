@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+  {{ range $nav := .Site.Params.nav.custom }}
+    <li><a href="{{- $nav.url -}}">{{- $nav.title -}}</a></li>
+    {{else}}
+    
+    {{ end }}
+  </ul>
+</nav>
