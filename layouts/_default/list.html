@@ -1,4 +1,4 @@
-{{- partial "header.html" . -}}
+{{- define "main" -}}
 
 <!-- Setting Page variable -->
 {{ $pages := .Pages }}
@@ -23,4 +23,4 @@
   {{ template "_internal/pagination.html" . }}
 </section>
 
-{{ partial "footer.html" . }}
+{{- end -}}

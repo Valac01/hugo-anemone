@@ -1,0 +1,6 @@
+<!-- All css code will go here -->
+
+{{ $scss := resources.Get "scss/index.scss" }}
+{{ $style := $scss | resources.ToCSS }}
+
+<link rel="stylesheet" href="{{- $style.Permalink -}}" integrity="{{- $style.Data.Integrity -}}">

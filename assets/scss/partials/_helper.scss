@@ -1,0 +1,23 @@
+.grow {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.sm-hide {
+  @media (max-width: $sm-breakpoint) {
+    display: none !important;
+  }
+}
+
+.sm-show {
+  @media (min-width: $sm-breakpoint) {
+    display: none !important;
+  }
+}

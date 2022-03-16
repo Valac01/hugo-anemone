@@ -1,3 +1,5 @@
+{{- define "main" -}}
+
 {{$page := .}}
 <main>
   <div>{{- $page.Title -}}</div>
@@ -5,3 +7,5 @@
     {{- $page.Content -}}
   </article>
 </main>
+
+{{- end -}}

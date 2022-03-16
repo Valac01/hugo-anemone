@@ -1,0 +1,12 @@
+@import "./partials/normalize";
+@import "./partials/variables";
+@import "./partials/font";
+
+// Helper Styles
+@import "./partials/helper";
+
+// Components
+@import "./components/navbar";
+
+// Base styles
+@import "./components/base";

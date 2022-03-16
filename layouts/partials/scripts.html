@@ -1,0 +1,9 @@
+<!-- All js code will go here -->
+
+{{ $index := resources.Get "js/index.js" }}
+{{ $navigation := resources.Get "js/components/navigation.js" }}
+
+<!-- Bundlein js files  -->
+{{ $js := slice $index $navigation | resources.Concat "js/bundle.js" }}
+
+<script src="{{- $js.Permalink -}}" integrity="{{- $js.Data.Integrity -}}"></script>

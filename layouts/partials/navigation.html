@@ -1,9 +1,25 @@
-<nav>
-  <ul>
-  {{ range $nav := .Site.Params.nav.custom }}
-    <li><a href="{{- $nav.url -}}">{{- $nav.title -}}</a></li>
+<div class="navbar">
+  <div class="mobnav__toggle btn">
+    <span class="material-icons">menu</span>
+  </div>
+  <div class="navbar__title">{{ .Site.Title }}</div>
+  <div class="grow"></div>
+  <nav class="navbar__menu">
+    {{ range $nav := .Site.Params.nav.custom }}
+    <div class="navbar__item navbar__item--active">
+      <a href="{{- $nav.url -}}" class="navbar__link">{{- $nav.title -}}</a>
+    </div>
     {{else}}
-    
     {{ end }}
-  </ul>
+  </nav>
+</div>
+
+<!-- Mobile nav -->
+<nav class="mobnav" data-visible="false">
+  {{ range $nav := .Site.Params.nav.custom }}
+  <div class="mobnav__item navbar__item--active">
+    <a href="{{- $nav.url -}}" class="mobnav__link">{{- $nav.title -}}</a>
+  </div>
+  {{else}}
+  {{ end }}
 </nav>
