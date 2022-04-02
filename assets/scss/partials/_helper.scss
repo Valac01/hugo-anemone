@@ -21,3 +21,10 @@
     display: none !important;
   }
 }
+
+// Helper mixins
+@mixin top-border($color, $width) {
+  border-top-width: $width;
+  border-top-color: $color;
+  border-top-style: solid;
+}

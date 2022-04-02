@@ -1,0 +1,84 @@
+.card {
+  background-color: var(--card-background-color);
+  border-color: var(--card-border-color);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 18px;
+
+  &:hover {
+    border-color: var();
+  }
+  &__cover {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+  &__body {
+    margin: 18px 0 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    @extend .serif-font;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--font-color);
+  }
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0px 10px 0px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.35ch;
+  }
+  &__category {
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 140ms ease-in-out;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+  &__description {
+    @extend .sans-font;
+    font-style: italic;
+    font-weight: 700;
+    padding: 12px 0px;
+    @include top-border($color: var(--primary-color), $width: 2px);
+  }
+  &__tags {
+    font-size: 0.8rem;
+    display: flex;
+    padding-top: 10px;
+    @include top-border($color: var(--font-color-dark), $width: 1px);
+    div {
+      padding: 0px 10px;
+      border-right-width: 1px;
+      border-right-color: var(--font-color-dark);
+      border-right-style: solid;
+      &:first-child {
+        padding-left: 0px;
+      }
+      &:last-child {
+        border: none;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 140ms ease-in-out;
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}

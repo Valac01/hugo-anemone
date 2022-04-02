@@ -1,5 +1,33 @@
 {{ $page := . }}
 
 <div class="card">
-  {{ $page.Title }}
+  {{ with $page.Params.cover}}
+  <img class="card__cover" src="{{$page.Params.cover}}" alt="" srcset="">
+  {{end}}
+  <div class="card__body">
+    <div class="card__title"><a href="{{ $page.Permalink }}" class="card__link"><span>{{- $page.Title -}}</span></a></div>
+    <div class="card__meta">
+      {{- if $page.Params.Categories -}}
+      {{- range $index, $category := (.GetTerms "categories") -}}
+      <!-- Only displaying first category following current ui design TODO: find a way to support displaying all categories -->
+      {{ if eq $index 0 }}
+      <div class="card__category"><a href="{{ $category.Permalink }}">{{ $category.LinkTitle }}</a></div>
+      {{- end -}}
+      {{- end -}}
+      {{- end -}}
+      <div class="card__date">{{ $page.Date.Format "Jan 2, 2006" }}</div>
+    </div>
+    {{ with $page.Params.Descripton }}
+    <div class="card__description">
+      {{- truncate 120 $page.Params.Descripton -}}
+    </div>
+    {{ end }}
+    {{- if .Page.Params.Tags -}}
+    <div class="card__tags">
+      {{ range $tag := (.GetTerms "tags") }}
+      <div><a href="{{ $tag.Permalink }}">{{- $tag.LinkTitle -}}</a></div>
+      {{ end }}
+    </div>
+    {{- end -}}
+  </div>
 </div>

@@ -4,21 +4,21 @@
 {{ $pages := .Pages }}
 
 <!-- Index contents -->
-<section>
+<section class="list-section">
+  {{ if .Title}}
   <h1>{{ .Title }}</h1>
+  {{ end }}
+  {{ if .Content }}
   <div>
     {{ .Content }}
   </div>
+  {{ end }}
 </section>
 
 <!-- List section -->
-<section>
+<section class="list-section">
   {{ range $page := .Paginator.Pages }}
-  <div><a href="{{ $page.Permalink }}"><span>{{- $page.Title -}}</span></a></div>
-  <div>{{ $page.Date.Format "Jan 2, 2006" }}</div>
-  {{ with $page.Params.cover}}
-  <img src="{{$page.Params.cover}}" alt="" srcset="">
-  {{end}}
+  {{- partial "card.html" $page -}}
   {{ end }}
   {{ template "_internal/pagination.html" . }}
 </section>
