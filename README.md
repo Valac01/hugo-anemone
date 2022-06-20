@@ -1,5 +1,15 @@
 # Hugo theme Anemone
 
+## Run development
+
+```bash
+# cd into example site for dummy pages
+cd exampleSite
+
+# Run hugo directing to themes directory
+hugo server -D --themesDir ../..
+```
+
 Features
 
 - Custom Hero section
