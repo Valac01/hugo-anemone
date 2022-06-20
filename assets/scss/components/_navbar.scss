@@ -51,6 +51,9 @@
   &__toggle {
     @extend .sm-show;
     padding: 8px;
+    span {
+      vertical-align: middle;
+    }
   }
   &__item {
     margin: 4px;
