@@ -17,9 +17,9 @@
       {{- end -}}
       <div class="card__date">{{ $page.Date.Format "Jan 2, 2006" }}</div>
     </div>
-    {{ with $page.Params.Descripton }}
+    {{ with $page.Params.Description }}
     <div class="card__description">
-      {{- truncate 120 $page.Params.Descripton -}}
+      {{- truncate 120 $page.Params.Description -}}
     </div>
     {{ end }}
     {{- if .Page.Params.Tags -}}
