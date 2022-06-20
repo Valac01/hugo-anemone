@@ -1,11 +1,46 @@
 {{- define "main" -}}
 
 {{$page := .}}
-<main>
-  <div>{{- $page.Title -}}</div>
-  <article>
+<main class="post">
+  <!-- Category -->
+  <section>
+    {{- if $page.Params.Categories -}}
+      {{- range $index, $category := (.GetTerms "categories") -}}
+        <!-- Only displaying first category following current ui design TODO: find a way to support displaying all categories for ux -->
+        {{ if eq $index 0 }}
+        <div class="post__category"><a href="{{ $category.Permalink }}">{{ $category.LinkTitle }}</a></div>
+      {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    <h1 class="post__title">{{- $page.Title -}}</h1>
+    <!-- Date -->
+    <div class="post__date"><span>{{ $page.Date.Format "Jan 2, 2006" }}</span></div>
+  </section>
+  <!-- Post cover -->
+  {{ with $page.Params.cover}}
+  <img class="post__cover" src="{{$page.Params.cover}}" alt="" srcset="">
+  {{end}}
+  <article class="post__body">
+    <!-- dicription -->
+    {{ with $page.Params.Description }}
+    <p class="post__description">
+      {{- $page.Params.Description -}}
+    </p>
+    {{ end }}
     {{- $page.Content -}}
   </article>
+  <footer class="post__footer">
+    {{- if .Page.Params.Tags -}}
+    <div class="post__tags">
+      {{ range $tag := (.GetTerms "tags") }}
+      <div><a href="{{ $tag.Permalink }}">{{- $tag.LinkTitle -}}</a></div>
+      {{ end }}
+    </div>
+    {{- end -}}
+    <div class="post__share">
+      <span class="material-icons">share</span>
+    </div>
+  </footer>
 </main>
 
 {{- end -}}

@@ -2,6 +2,7 @@
 title: "Lorem Ipsum"
 date: 2021-08-20T13:27:29+05:30
 cover: "/covers/annie-spratt-X-5JguVMLtc-unsplash.jpg"
+description: "disc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 draft: false
 categories:
   - "Lorem ipsum"

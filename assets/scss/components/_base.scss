@@ -1,6 +1,10 @@
+html {
+  font-size: $root-font-size;
+}
 body {
   @extend .sans-font;
   color: var(--font-color);
+  scroll-behavior: smooth;
 }
 
 .main {
