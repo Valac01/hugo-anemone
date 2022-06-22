@@ -2,8 +2,9 @@
 
 {{ $index := resources.Get "js/index.js" }}
 {{ $navigation := resources.Get "js/components/navigation.js" }}
+{{ $shareBtn := resources.Get "js/components/shareBtn.js" }}
 
 <!-- Bundlein js files  -->
-{{ $js := slice $index $navigation | resources.Concat "js/bundle.js" }}
+{{ $js := slice $index $navigation $shareBtn | resources.Concat "js/bundle.js" }}
 
 <script src="{{- $js.Permalink -}}" integrity="{{- $js.Data.Integrity -}}"></script>

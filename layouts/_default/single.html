@@ -37,7 +37,15 @@
       {{ end }}
     </div>
     {{- end -}}
-    <div class="post__share">
+    <div 
+      id="share-btn"
+      class="post__share" 
+      data-title="{{ $page.Title }}"
+      {{ with $page.Params.Description }}
+      data-text="{{ truncate 120 $page.Params.Description }}"
+      {{ end }}
+      data-url="{{ $page.Permalink }}"
+    >
       <span class="material-icons">share</span>
     </div>
   </footer>
