@@ -1,6 +1,6 @@
-console.log("from shareBtn.js");
+console.log("from shareBtn.ts");
 
-const shareBtn = document.querySelector("#share-btn");
+const shareBtn = document.querySelector("#share-btn") as HTMLDivElement;
 
 if (!navigator.share && shareBtn) {
   // Removing the node from view

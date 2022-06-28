@@ -1,7 +1,7 @@
-console.log("from navigation.js");
+console.log("from navigation.ts");
 
-const mobNav = document.querySelector(".mobnav");
-const mobNavToggle = document.querySelector(".mobnav__toggle");
+const mobNav = document.querySelector(".mobnav") as HTMLDivElement;
+const mobNavToggle = document.querySelector(".mobnav__toggle") as HTMLDivElement;
 
 mobNavToggle.addEventListener("click", () => {
   const visibility = mobNav.getAttribute("data-visible");
