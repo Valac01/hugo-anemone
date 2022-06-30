@@ -31,6 +31,32 @@ greet("world");
 Hello world
 {{</highlight>}}
 
+```cpp {style="manni"}
+class Player {
+public:
+  int score;
+  // Preventing from changing the member variables Preventing from changing the member variables
+  int getScore() const {
+    score += 1 // Produces an error
+    return score;
+  }
+}
+
+```
+
+```cpp {style="colorful"}
+class Player {
+public:
+  int score;
+  // Preventing from changing the member variables
+  int getScore() const {
+    score += 1 // Produces an error
+    return score;
+  }
+}
+
+```
+
 ### Enim facilisis gravida neque convallis a
 
 ![](/img/posts/ayumi-kubo-VxlrOpj9fOs-unsplash.jpg)

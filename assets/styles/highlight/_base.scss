@@ -1,0 +1,25 @@
+// Base styles for code blocks
+pre {
+  font-size: 0.8rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #c2c1c1;
+    border-radius: 20px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    &:hover {
+      background-color: #999999;
+    }
+    &:active {
+      background-color: #707070;
+    }
+  }
+}
+
+@import "./base16-snazzy.scss";

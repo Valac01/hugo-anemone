@@ -16,7 +16,8 @@ enableRobotsTXT = true
 
 [markup.highlight]
 codeFences = true
-noClasses = false
+noClasses = true
+style = "base16-snazzy"
 
 [markup.goldmark.renderer]
 unsafe = true  # enable raw HTML in Markdown
