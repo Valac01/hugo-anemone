@@ -1,4 +1,5 @@
 .card {
+  max-width: $card-max-width;
   background-color: var(--card-background-color);
   border-color: var(--card-border-color);
   border-width: 1px;

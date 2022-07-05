@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Anemone"
 theme = "Anemone"
-copyright = "©2022 Anemone."
+copyright = "Anemone."
 
 hasCJKLanguage = true # Chinese Japanese Korean language
 

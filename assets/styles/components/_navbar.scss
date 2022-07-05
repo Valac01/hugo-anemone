@@ -2,7 +2,7 @@
   display: flex;
   height: $mob-nav-height;
   background-color: var(--navbar-bg-color);
-  padding: 0px 10px;
+  padding: 0px 40px;
   align-items: center;
   &__title {
     font-size: 1.4rem;
@@ -69,5 +69,11 @@
     padding: 10px;
     color: var(--font-color-dark);
     text-decoration: none;
+  }
+}
+
+@media (max-width: $sm-breakpoint) {
+  .navbar {
+    padding: 0px 10px;
   }
 }
