@@ -41,7 +41,7 @@ Create this page however you'll like and it'll replace the contents from theme i
 ### Latest Section in home page
 
 You can show latest 3 pages of any section in your website.
-You have a section called `codes` at `www.example.com/codes` and you'd like to show latest 3 pages from that section in your home page. Then you need to add `params.latest.section` at you site `config` file.
+Lets say you have a section called `codes` at `www.example.com/codes` and you'd like to show latest 3 pages from that section in your home page. Then you need to add `params.latest.section` at you site `config` file.
 
 ```toml
 [[params.latest.section]]
