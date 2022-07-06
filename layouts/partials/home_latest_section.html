@@ -1,7 +1,9 @@
 {{- $latestDetail := . -}}
 {{- with site.GetPage $latestDetail.url -}}
 <section class="home__section">
-  <h3>Latest {{ $latestDetail.title }}</h3>
+  {{- with $latestDetail.title -}}
+  <h3>{{ $latestDetail.title }}</h3>
+  {{- end -}}
   <!-- show latest 3 notes -->
   <div class="home__grid">
     {{- range $page := first 3 .Pages -}}

@@ -71,7 +71,7 @@ title = "About"
 url = "/about"
 
 [[params.latest.section]]
-title = "Blog Posts"
+title = "Latest Blog Posts"
 url = "/posts"
 
 [[params.latest.section]]
