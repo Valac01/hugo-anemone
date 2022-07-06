@@ -12,7 +12,9 @@
 
 @media (max-width: $sm-breakpoint) {
   .home {
-    padding: $home-sm-body-padding;
+    &__section {
+      padding: $home-sm-body-padding;
+    }
     &__grid {
       justify-items: center;
     }
