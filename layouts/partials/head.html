@@ -1,7 +1,19 @@
 <head>
   <meta charset="UTF-8">
+  {{- hugo.Generator -}}
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{- .Site.Title -}}</title>
+  
+  {{- define "title" -}}
+    {{- $siteTitle := site.Title -}}
+    {{- $pageTitle := .Page.Title -}}
+    {{- if ne $pageTitle $siteTitle -}}
+      <title>{{- $pageTitle -}}&nbsp;&vert;&nbsp;{{- $siteTitle -}}</title>
+    {{ else }}
+      <title>{{- $siteTitle -}}</title>
+    {{- end -}}
+  {{- end -}}
+
+  {{- block "title" . -}}{{- end -}}
   {{- partial "css.html" . -}}
 </head>
