@@ -10,11 +10,22 @@ cd exampleSite
 hugo server -D --themesDir ../..
 ```
 
+## Site config file
+
+You can add or change default site settings in your site config file `config.toml` located in your `website-root` folder if not you can create it yourself. Every configuration settings can be [found here](https://gohugo.io/getting-started/configuration/)
+
+```bash
+.
+└── config.toml
+```
+
 Features
 
-- Custom Hero section
+- [Custom Hero section](#custom-hero-section)
+- [Latest Section in home page](#latest-section-in-home-page)
+- [Code highlight](#code-highlight)
 
-## Custom Hero section
+### Custom Hero section
 
 create your own partial called `hero.html`
 
@@ -27,13 +38,15 @@ create your own partial called `hero.html`
 
 Create this page however you'll like and it'll replace the contents from theme in the home page.
 
-## Site config file
+### Latest Section in home page
 
-You can add or change default site settings in your site config file `config.toml` located in your `website-root` folder if not you can create it yourself. Every configuration settings can be [found here](https://gohugo.io/getting-started/configuration/)
+You can show latest 3 pages of any section in your website.
+You have a section called `codes` at `www.example.com/codes` and you'd like to show latest 3 pages from that section in your home page. Then you need to add `params.latest.section` at you site `config` file.
 
-```bash
-.
-└── config.toml
+```toml
+[[params.latest.section]]
+title = "Codes" #title of the section
+url = "/codes" #relative path of the section where your list of pages lies
 ```
 
 ### Code highlight

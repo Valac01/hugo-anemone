@@ -70,5 +70,17 @@ url = "/drafts"
 title = "About"
 url = "/about"
 
+[[params.latest.section]]
+title = "Blog Posts"
+url = "/posts"
+
+[[params.latest.section]]
+title = "Drafts"
+url = "/drafts"
+
+[[params.latest.section]]
+title = "Notes"
+url = "/notes"
+
 [frontmatter]
   lastmod = [":fileModTime", ":default"]

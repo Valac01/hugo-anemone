@@ -1,38 +1,8 @@
 {{- define "main" -}}
   {{ partial "hero.html" . }}
   <main class="home">
-    <section class="home__section">
-      <h3>Latest Blog Posts</h3>
-      <!-- show latest 3 notes -->
-      <div class="home__grid">
-        {{- with .Site.GetPage "/posts" -}}
-        {{- range $page := first 3 .Pages -}}
-        {{- partial "card.html" . -}}
-        {{- end -}}
-        {{- end -}}
-      </div>
-      </section>
-    <section class="home__section">
-      <h3>Latest Notes</h3>
-      <!-- show latest 3 notes -->
-      <div class="home__grid">
-        {{- with .Site.GetPage "/notes" -}}
-        {{- range $page := first 3 .Pages -}}
-        {{- partial "card.html" . -}}
-        {{- end -}}
-        {{- end -}}
-      </div>
-    </section>
-    <section class="home__section">
-      <h3>Latest Drafts</h3>
-      <!-- show latest 3 drafts post -->
-      <div class="home__grid">
-        {{- with .Site.GetPage "/drafts" -}}
-        {{- range $page := first 3 .Pages -}}
-        {{- partial "card.html" . -}}
-        {{- end -}}
-        {{- end -}}
-      </div>
-    </section>
+    {{- range $latest := .Site.Params.latest.section -}}
+    {{- partial "home_latest_section.html" $latest -}}
+    {{- end -}}
   </main>
 {{- end -}}
