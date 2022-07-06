@@ -9,6 +9,10 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.2ch;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
   &__menu {
     @extend .sm-hide;

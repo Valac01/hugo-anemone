@@ -2,7 +2,7 @@
   <div class="mobnav__toggle btn">
     <span class="material-icons">menu</span>
   </div>
-  <div class="navbar__title">{{ .Site.Title }}</div>
+  <div class="navbar__title"><a href="/">{{ .Site.Title }}</a></div>
   <div class="grow"></div>
   <nav class="navbar__menu">
     {{ range $nav := .Site.Params.nav.custom }}
