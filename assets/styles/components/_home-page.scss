@@ -1,6 +1,6 @@
 .home {
   &__section {
-    padding: $home-body-padding;
+    padding: $body-padding;
   }
   &__grid {
     display: grid;
@@ -13,7 +13,7 @@
 @media (max-width: $sm-breakpoint) {
   .home {
     &__section {
-      padding: $home-sm-body-padding;
+      padding: $sm-body-padding;
     }
     &__grid {
       justify-items: center;

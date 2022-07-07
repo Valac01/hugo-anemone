@@ -1,0 +1,9 @@
+.list-section {
+  padding: $body-padding;
+}
+
+@media (max-width: $sm-breakpoint) {
+  .list-section {
+    padding: $sm-body-padding;
+  }
+}

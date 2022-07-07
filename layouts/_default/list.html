@@ -17,9 +17,11 @@
 
 <!-- List section -->
 <section class="list-section">
+  <div>
   {{ range $page := .Paginator.Pages }}
-  {{- partial "card.html" $page -}}
+  {{- partial "list_tile.html" $page -}}
   {{ end }}
+  </div>
   {{ template "_internal/pagination.html" . }}
 </section>
 
