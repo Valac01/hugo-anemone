@@ -23,6 +23,7 @@ Features
 
 - [Custom Hero section](#custom-hero-section)
 - [Latest Section in home page](#latest-section-in-home-page)
+- [Post Covers](#post-covers)
 - [Code highlight](#code-highlight)
 
 ### Custom Hero section
@@ -48,6 +49,31 @@ Lets say you have a section called `codes` at `www.example.com/codes` and you'd 
 title = "Codes" #title of the section
 url = "/codes" #relative path of the section where your list of pages lies
 ```
+
+### Post Covers
+
+Your articles can have cover images which will be displayed in the articles, articles list as a thumbnail and in cards.
+
+In your front matter of the article add a `cover` property.
+
+All your cover images should be **inside** the `static` folder
+
+```markdown
+title: "Lorem ipsum dolor sit amet."
+cover: "/covers/cover-image.jpg"
+```
+
+The theme will resize your cover image into smaller sizes to be used in the thumbnail only if you mount your cover images directory into the `assets` directory. Otherwise the thumbnail will use the full size images.
+
+To mount the directories add `module.mount` property as shown in [Hugo docs](https://gohugo.io/hugo-modules/configuration/#module-config-mounts)
+
+```toml
+[[module.mounts]]
+  source = "static/covers" # Your cover image directory in static folder
+  target = "assets/covers"
+```
+
+Keep in mind resizing will increase the build times, but hugo caches the processed images in `resources` folder, [Hugo docs](https://gohugo.io/content-management/image-processing/#image-processing-performance-consideration). Which you can use to your advantage as a cache between builds in CI/CD environment.
 
 ### Code highlight
 

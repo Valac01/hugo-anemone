@@ -34,7 +34,14 @@
   {{- with $page.Params.cover -}}
   <div class="tile__cover">
     <a class="tile__link" href="{{ $page.Permalink }}">
+      {{- $image := resources.Get $page.Params.cover -}}
+      {{- with $image -}}
+      <!-- Resizing Image -->
+      {{- $image := $image.Resize "x200" -}}
+      <img class="tile__image" src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}">
+      {{- else -}}
       <img class="tile__image" src="{{ $page.Params.cover }}" alt="{{ $page.Title }}">
+      {{- end -}}
     </a>
   </div>
   {{- end -}}
