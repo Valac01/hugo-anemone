@@ -2,7 +2,7 @@
 
 <div class="card">
   {{ with $page.Params.cover}}
-  <img class="card__cover" src="{{$page.Params.cover}}" alt="" srcset="">
+  <img class="card__cover" src="{{ $page.Params.cover }}" alt="{{ $page.Title }}" srcset="">
   {{end}}
   <div class="card__body">
     <div class="card__title"><a href="{{ $page.Permalink }}" class="card__link"><span>{{- $page.Title -}}</span></a></div>
