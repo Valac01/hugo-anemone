@@ -54,9 +54,9 @@ url = "/codes" #relative path of the section where your list of pages lies
 
 Your articles can have cover images which will be displayed in the articles, articles list as a thumbnail and in cards.
 
-In your front matter of the article add a `cover` property.
-
 All your cover images should be **inside** the `static` folder
+
+In your front matter of the article add a `cover` property.
 
 ```markdown
 title: "Lorem ipsum dolor sit amet."
