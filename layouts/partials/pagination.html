@@ -1,0 +1,62 @@
+{{- $paginator := . -}}
+{{- $pageLimit := 1 -}}
+{{- $currentPageNumber := $paginator.PageNumber -}}
+{{- $isActive := "false" -}}
+<nav class="pagination">
+  <ul class="pagination__list">
+    {{- with $paginator.HasPrev -}}
+    <li class="pagination__list--item">
+      <a class="pagination__link" href="{{ $paginator.Prev.URL }}" >
+        <span class="material-icons pagination__icon">navigate_before</span>
+      </a>
+    </li>
+    {{- end -}}
+    {{- if (gt $currentPageNumber (add $paginator.First.PageNumber $pageLimit)) -}}
+    <li class="pagination__list--item">
+      <a class="pagination__link" href="{{ $paginator.First.URL }}">
+        {{- $paginator.First.PageNumber -}}
+      </a>
+    </li>
+    {{- if ne $currentPageNumber (add $paginator.First.PageNumber (add $pageLimit 1)) -}}
+    <li class="pagination__list--item">
+      <a class="pagination__link pagination__link--no-hover">
+        <span class="pagination__icon pagination__icon--elipses">&hellip;</span>
+      </a>
+    </li>
+    {{- end -}}
+    {{- end -}}
+    {{- range $idx, $page := $paginator.Pagers -}}
+    {{- if and (ge $idx (sub $currentPageNumber (add $pageLimit $pageLimit))) (lt $idx  (add $pageLimit $currentPageNumber)) -}}
+    {{- if eq $currentPageNumber $page.PageNumber -}}
+    {{- $isActive = "true" -}}
+    {{- else -}}
+    {{- $isActive = "false" -}}
+    {{- end -}}
+    <li class="pagination__list--item" data-active="{{- $isActive -}}">
+      <a class="pagination__link" href="{{ $page.URL }}">{{- $page.PageNumber -}}</a>
+    </li>
+    {{- end -}}
+    {{- end -}}
+    {{- if (lt $currentPageNumber (sub $paginator.Last.PageNumber $pageLimit)) -}}
+    {{- if ne $currentPageNumber (sub $paginator.Last.PageNumber (add $pageLimit 1)) -}}
+    <li class="pagination__list--item">
+      <a class="pagination__link pagination__link--no-hover">
+        <span class="pagination__icon pagination__icon--elipses">&hellip;</span>
+      </a>
+    </li>
+    {{- end -}}
+    <li class="pagination__list--item">
+      <a class="pagination__link" href="{{ $paginator.Last.URL }}">
+        {{- $paginator.Last.PageNumber -}}
+      </a>
+    </li>
+    {{- end -}}
+    {{- with $paginator.HasNext -}}
+    <li class="pagination__list--item">
+      <a class="pagination__link" href="{{ $paginator.Next.URL }}">
+        <span class="material-icons pagination__icon">navigate_next</span>
+      </a>
+    </li>
+    {{- end -}}
+  </ul>
+</nav>

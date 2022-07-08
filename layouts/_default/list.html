@@ -1,7 +1,7 @@
 {{- define "main" -}}
 
 <!-- Setting Page variable -->
-{{ $pages := .Pages }}
+{{ $paginator := .Paginator }}
 
 <!-- Index contents -->
 <section class="list-section">
@@ -17,12 +17,10 @@
 
 <!-- List section -->
 <section class="list-section">
-  <div>
-  {{ range $page := .Paginator.Pages }}
-  {{- partial "list_tile.html" $page -}}
+  {{ range $page := $paginator.Pages }}
+  {{- partial "tile.html" $page -}}
   {{ end }}
-  </div>
-  {{ template "_internal/pagination.html" . }}
+  {{ partial "pagination.html" $paginator }}
 </section>
 
 {{- end -}}
