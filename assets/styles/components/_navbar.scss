@@ -23,8 +23,6 @@
     &:hover {
       background-color: var(--nav-link-hover-color);
     }
-    &--active {
-    }
   }
   &__link {
     display: block;
@@ -65,8 +63,6 @@
     border-radius: 4px;
     &:hover {
       background-color: var(--nav-link-hover-color);
-    }
-    &--active {
     }
   }
   &__link {

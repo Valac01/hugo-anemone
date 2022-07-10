@@ -6,7 +6,7 @@
   <div class="grow"></div>
   <nav class="navbar__menu">
     {{ range $nav := .Site.Params.nav.custom }}
-    <div class="navbar__item navbar__item--active">
+    <div class="navbar__item">
       <a href="{{- $nav.url -}}" class="navbar__link">{{- $nav.title -}}</a>
     </div>
     {{else}}
@@ -17,7 +17,7 @@
 <!-- Mobile nav -->
 <nav class="mobnav" data-visible="false">
   {{ range $nav := .Site.Params.nav.custom }}
-  <div class="mobnav__item navbar__item--active">
+  <div class="mobnav__item">
     <a href="{{- $nav.url -}}" class="mobnav__link">{{- $nav.title -}}</a>
   </div>
   {{else}}
