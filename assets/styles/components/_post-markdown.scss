@@ -1,0 +1,113 @@
+.post {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .serif-font;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  table {
+    code {
+      vertical-align: bottom;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      color: var(--primary-color);
+      background-color: var(--btn-hover-color);
+    }
+  }
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    position: relative;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary-color);
+      position: absolute;
+      left: 0;
+      bottom: 0px; /* this is to match where the border is */
+      transform-origin: left;
+      transform: scale(0);
+      transition: 250ms linear;
+      /*   will-change: transform; */
+    }
+    &:hover:before {
+      transform: scale(1);
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    th,
+    td {
+      padding: 0.1rem 0.2rem;
+    }
+    tr:first-child {
+      td {
+        padding-top: 0.4rem;
+      }
+    }
+    tr:last-child {
+      td {
+        padding-bottom: 0.4rem;
+        border-bottom-color: var(--font-color);
+        border-bottom-width: 0.1rem;
+        border-bottom-style: solid;
+      }
+    }
+    th {
+      border-bottom-color: var(--font-color);
+      border-bottom-width: 0.2rem;
+      border-bottom-style: solid;
+      border-top-color: var(--font-color);
+      border-top-width: 0.2rem;
+      border-top-style: solid;
+      padding-bottom: 0.2rem;
+      padding-top: 0.2rem;
+    }
+  }
+  p {
+    mark {
+      background-color: #ecea6c;
+      padding-inline: 0.2rem;
+    }
+    kbd {
+      font-size: 0.9rem;
+      padding: 0.1rem 0.2rem;
+      background-color: var(--btn-hover-color);
+      color: var(--font-color-dark);
+    }
+  }
+  pre {
+    background-color: var(--code-block-color);
+    color: #ffffff;
+  }
+  blockquote {
+    padding: 0rem 1.4rem;
+    margin: 1rem 0.4rem;
+    font-style: italic;
+    opacity: 0.92;
+    border-left: 2px solid var(--font-color);
+    cite {
+      @extend .serif-font;
+    }
+  }
+  ol li::marker {
+    font-size: 0.86rem;
+  }
+  li > ul {
+    padding-left: 1rem;
+  }
+}
