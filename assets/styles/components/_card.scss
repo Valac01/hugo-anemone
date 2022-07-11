@@ -1,20 +1,16 @@
 .card {
   max-width: $card-max-width;
-  background-color: var(--card-background-color);
-  border-color: var(--card-border-color);
-  border-width: 1px;
-  border-style: solid;
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
   border-radius: 4px;
   padding: 16px;
   margin-bottom: 18px;
 
-  &:hover {
-    border-color: var();
-  }
   &__cover {
     width: 100%;
     height: 240px;
     object-fit: cover;
+    border-radius: 4px;
   }
   &__body {
     margin: 18px 0 0 0;
@@ -28,7 +24,7 @@
   }
   &__link {
     text-decoration: none;
-    color: var(--font-color);
+    color: var(--color-on-surface-variant);
   }
   &__meta {
     display: flex;
@@ -41,11 +37,10 @@
   }
   &__category {
     a {
-      color: inherit;
-      text-decoration: none;
+      color: var(--color-on-surface-variant);
       transition: color 140ms ease-in-out;
       &:hover {
-        color: var(--primary-color);
+        color: var(--color-primary);
       }
     }
   }
@@ -54,17 +49,17 @@
     font-style: italic;
     font-weight: 700;
     padding: 12px 0px;
-    @include top-border($color: var(--primary-color), $width: 2px);
+    @include top-border($color: var(--color-primary), $width: 2px);
   }
   &__tags {
     font-size: 0.8rem;
     display: flex;
     padding-top: 10px;
-    @include top-border($color: var(--font-color-dark), $width: 1px);
+    @include top-border($color: var(--color-on-surface-variant), $width: 1px);
     div {
       padding: 0px 10px;
       border-right-width: 1px;
-      border-right-color: var(--font-color-dark);
+      border-right-color: var(--color-on-surface-variant);
       border-right-style: solid;
       &:first-child {
         padding-left: 0px;
@@ -73,11 +68,10 @@
         border: none;
       }
       a {
-        color: inherit;
-        text-decoration: none;
+        color: var(--color-on-surface-variant);
         transition: color 140ms ease-in-out;
         &:hover {
-          color: var(--primary-color);
+          color: var(--color-primary);
         }
       }
     }

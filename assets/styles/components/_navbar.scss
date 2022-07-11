@@ -1,12 +1,16 @@
 .navbar {
   display: flex;
   height: $mob-nav-height;
-  background-color: var(--navbar-bg-color);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
   padding: 0px 40px;
   align-items: center;
+  border-bottom-color: var(--color-outline);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   &__title {
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2ch;
     a {
@@ -20,14 +24,18 @@
   }
   &__item {
     border-radius: 4px;
+    transition-property: color background-color;
+    transition-duration: 180ms;
+    transition-timing-function: ease-in-out;
     &:hover {
-      background-color: var(--nav-link-hover-color);
+      background-color: var(--color-surface-variant);
+      color: var(--color-on-surface-variant);
     }
   }
   &__link {
     display: block;
     padding: 12px;
-    color: var(--font-color-dark);
+    color: inherit;
     text-decoration: none;
   }
 }
@@ -38,11 +46,14 @@
   flex-direction: column;
   position: absolute;
   top: $mob-nav-height;
-  background-color: var(--background-color);
+  background-color: var(--color-surface);
   height: calc(100% - #{$mob-nav-height});
   width: 60%;
   padding: 0px;
   z-index: 999;
+  border-top-color: var(--color-outline);
+  border-top-width: 1px;
+  border-top-style: solid;
   transform: translateX(-100%);
 
   transition: transform 250ms ease-in-out;
@@ -61,24 +72,27 @@
   &__item {
     margin: 4px;
     border-radius: 4px;
+    transition-property: color background-color;
+    transition-duration: 180ms;
+    transition-timing-function: ease-in-out;
     &:hover {
-      background-color: var(--nav-link-hover-color);
+      background-color: var(--color-surface-variant);
+      color: var(--color-on-surface-variant);
     }
   }
   &__link {
     display: block;
     padding: 10px;
-    color: var(--font-color-dark);
+    color: var(--color-on-surface);
     text-decoration: none;
   }
   &--overlay::before {
     content: "";
     position: absolute;
     top: $mob-nav-height;
-    backdrop-filter: blur(8px);
     width: 100%;
     height: 100%;
-    background-color: #777777;
+    background-color: var(--color-inverse-surface);
     opacity: 0.6;
   }
 }
