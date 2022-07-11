@@ -2,14 +2,16 @@
 
 <div class="card">
   {{- with $page.Params.cover -}}
-  {{- $image := resources.Get $page.Params.cover -}}
-  {{- with $image -}}
-  <!-- Resizing Image -->
-  {{- $image := $image.Resize "x240" -}}
-  <img class="card__cover" src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" srcset="">
-  {{- else -}}
-  <img class="card__cover" src="{{ $page.Params.cover }}" alt="{{ $page.Title }}" srcset="">
-  {{- end -}}
+  <a href="{{ $page.Permalink }}" class="card__link">
+    {{- $image := resources.Get $page.Params.cover -}}
+    {{- with $image -}}
+    <!-- Resizing Image -->
+    {{- $image := $image.Resize "x240" -}}
+    <img class="card__cover" src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" srcset="">
+    {{- else -}}
+    <img class="card__cover" src="{{ $page.Params.cover }}" alt="{{ $page.Title }}" srcset="">
+    {{- end -}}
+  </a>
   {{- end -}}
   <div class="card__body">
     <div class="card__title"><a href="{{ $page.Permalink }}" class="card__link"><span>{{- $page.Title -}}</span></a></div>
@@ -26,7 +28,9 @@
     </div>
     {{ with $page.Params.Description }}
     <div class="card__description">
-      {{- truncate 120 $page.Params.Description -}}
+      <a href="{{ $page.Permalink }}" class="card__link">
+        {{- truncate 120 $page.Params.Description -}}
+      </a>
     </div>
     {{ end }}
     {{- if .Page.Params.Tags -}}
