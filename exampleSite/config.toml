@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Anemone"
 theme = "Anemone"
-copyright = "©2022 Anemone."
+copyright = "Anemone."
 
 hasCJKLanguage = true # Chinese Japanese Korean language
 
@@ -16,7 +16,8 @@ enableRobotsTXT = true
 
 [markup.highlight]
 codeFences = true
-noClasses = false
+noClasses = true
+style = "base16-snazzy"
 
 [markup.goldmark.renderer]
 unsafe = true  # enable raw HTML in Markdown
@@ -30,6 +31,10 @@ logo = "img/logo/logo-with-margin.jpg"  # if you have a logo png
 fullRss = false # Puts entire HTML post into rss 'description' tag. If unset, default is false.
 # ipv6ready = true # Show IPV6Ready logo on footer.
 readingTime = true
+
+[[module.mounts]]
+  source = "static/covers"
+  target = "assets/covers"
 
 [params.comments]
 enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
@@ -68,6 +73,18 @@ url = "/drafts"
 [[params.nav.custom]]
 title = "About"
 url = "/about"
+
+[[params.latest.section]]
+title = "Latest Blog Posts"
+url = "/posts"
+
+[[params.latest.section]]
+title = "Drafts"
+url = "/drafts"
+
+[[params.latest.section]]
+title = "Notes"
+url = "/notes"
 
 [frontmatter]
   lastmod = [":fileModTime", ":default"]

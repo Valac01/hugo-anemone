@@ -1,0 +1,17 @@
+.list-section {
+  padding: $body-padding;
+  width: 65vw;
+}
+
+@media (max-width: $sm-breakpoint) {
+  .list-section {
+    padding: $sm-body-padding;
+  }
+}
+
+@media (max-width: $md-breakpoint) {
+  .list-section {
+    width: auto;
+    padding: $sm-body-padding;
+  }
+}

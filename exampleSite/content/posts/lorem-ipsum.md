@@ -1,7 +1,8 @@
 ---
-title: "Lorem Ipsum"
+title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
 date: 2021-08-20T13:27:29+05:30
 cover: "/covers/annie-spratt-X-5JguVMLtc-unsplash.jpg"
+description: "disc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 draft: false
 categories:
   - "Lorem ipsum"
@@ -29,6 +30,32 @@ greet("world");
 {{<highlight bash>}}
 Hello world
 {{</highlight>}}
+
+```cpp {style="manni"}
+class Player {
+public:
+  int score;
+  // Preventing from changing the member variables Preventing from changing the member variables
+  int getScore() const {
+    score += 1 // Produces an error
+    return score;
+  }
+}
+
+```
+
+```cpp {style="colorful"}
+class Player {
+public:
+  int score;
+  // Preventing from changing the member variables
+  int getScore() const {
+    score += 1 // Produces an error
+    return score;
+  }
+}
+
+```
 
 ### Enim facilisis gravida neque convallis a
 

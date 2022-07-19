@@ -1,0 +1,95 @@
+.post {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .serif-font;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  table {
+    code {
+      vertical-align: bottom;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      color: var(--color-primary);
+      background-color: var(--color-surface-variant);
+    }
+  }
+  a {
+    color: var(--color-primary);
+  }
+
+  table {
+    border-collapse: collapse;
+    th,
+    td {
+      padding: 0.1rem 0.2rem;
+    }
+    tr:first-child {
+      td {
+        padding-top: 0.4rem;
+      }
+    }
+    tr:last-child {
+      td {
+        padding-bottom: 0.4rem;
+        border-bottom-color: var(--color-on-surface);
+        border-bottom-width: 0.1rem;
+        border-bottom-style: solid;
+      }
+    }
+    th {
+      border-bottom-color: var(--color-on-surface);
+      border-bottom-width: 0.2rem;
+      border-bottom-style: solid;
+      border-top-color: var(--color-on-surface);
+      border-top-width: 0.2rem;
+      border-top-style: solid;
+      padding-bottom: 0.2rem;
+      padding-top: 0.2rem;
+    }
+  }
+  p {
+    mark {
+      background-color: var(--color-primary-container);
+      color: var(--color-on-primary-container);
+      padding-inline: 0.2rem;
+    }
+    kbd {
+      font-size: 0.9rem;
+      padding: 0.1rem 0.2rem;
+      background-color: var(--color-primary-container);
+      color: var(--color-on-primary-container);
+    }
+  }
+  pre {
+    background-color: var(--color-inverse-surface);
+    color: var(--color-inverse-on-surface);
+  }
+  blockquote {
+    padding: 0rem 1.4rem;
+    margin: 1rem 0.4rem;
+    font-style: italic;
+    opacity: 0.92;
+    border-left: 2px solid var(--color-secondary);
+    cite {
+      @extend .serif-font;
+    }
+  }
+  ol li::marker {
+    font-size: 0.86rem;
+  }
+  li > ul {
+    padding-left: 1rem;
+  }
+}

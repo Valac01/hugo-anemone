@@ -1,0 +1,18 @@
+html {
+  font-size: $root-font-size;
+}
+
+body {
+  @extend .sans-font;
+  color: var(--color-on-surface);
+  scroll-behavior: smooth;
+}
+
+.main {
+  background-color: var(--color-surface);
+}
+
+a {
+  text-decoration: underline;
+  color: var(--color-primary);
+}

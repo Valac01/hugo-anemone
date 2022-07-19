@@ -1,9 +1,11 @@
 <!-- All js code will go here -->
 
-{{ $index := resources.Get "js/index.js" }}
-{{ $navigation := resources.Get "js/components/navigation.js" }}
+{{ $index := resources.Get "js/index.ts" }}
 
-<!-- Bundlein js files  -->
-{{ $js := slice $index $navigation | resources.Concat "js/bundle.js" }}
+<!-- Building js files  -->
+{{ $js := js.Build $index }}
+{{- if hugo.IsProduction -}}
+{{ $js = $js | resources.Minify | resources.Fingerprint }}
+{{- end -}}
 
 <script src="{{- $js.Permalink -}}" integrity="{{- $js.Data.Integrity -}}"></script>

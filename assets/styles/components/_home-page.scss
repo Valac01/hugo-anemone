@@ -1,0 +1,22 @@
+.home {
+  &__section {
+    padding: $body-padding;
+  }
+  &__grid {
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: start;
+  }
+}
+
+@media (max-width: $sm-breakpoint) {
+  .home {
+    &__section {
+      padding: $sm-body-padding;
+    }
+    &__grid {
+      justify-items: center;
+    }
+  }
+}

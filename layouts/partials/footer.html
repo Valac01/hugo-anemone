@@ -1,1 +1,11 @@
-<div>{{- .Site.Copyright -}}</div>
+<footer class="footer">
+  {{ if site.Copyright }}
+  <p>&copy;{{ now.Year }} {{ site.Copyright }}</p>
+  {{ else }}
+  <p>&copy;{{ now.Year }} <a href="{{ `` | absURL }}">{{ site.Title }}</a></p>
+  {{ end }}
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️ &amp;
+    <a href="https://github.com/Valac01/anemone" rel="noopener" target="_blank">Anemone</a>
+  </p>
+</footer>
+{{ template "_internal/google_analytics.html" . }}

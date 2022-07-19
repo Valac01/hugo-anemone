@@ -1,6 +1,9 @@
 <!-- All css code will go here -->
 
-{{ $scss := resources.Get "scss/index.scss" }}
+{{ $scss := resources.Get "styles/index.scss" }}
 {{ $style := $scss | resources.ToCSS }}
+{{- if hugo.IsProduction -}}
+{{ $style = $style | resources.Minify | resources.Fingerprint }}
+{{- end -}}
 
 <link rel="stylesheet" href="{{- $style.Permalink -}}" integrity="{{- $style.Data.Integrity -}}">

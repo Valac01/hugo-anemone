@@ -1,0 +1,48 @@
+<!-- Tiles for list pages -->
+{{- $page := . -}}
+<!-- Determining if the content has a cover image or not -->
+{{- $isCover := "" -}}
+{{- if isset $page.Params "cover" -}}
+{{- $isCover = "true" -}}
+{{- else -}}
+{{- $isCover = "false" -}}
+{{- end -}}
+<div class="tile" data-cover="{{ $isCover }}">
+  <div class="tile__content">
+    <a class="tile__link" href="{{ $page.Permalink }}">  
+      <h2 class="tile__title">{{ $page.Title }}</h2>
+      {{ with $page.Params.Description }}
+      <p class="tile__description">
+        {{- truncate 120 $page.Params.Description -}}
+      </p>
+      {{ end }}
+    </a>
+      <div class="tile__meta">
+        {{- if $page.Params.Categories -}}
+        {{- range $index, $category := (.GetTerms "categories") -}}
+        <!-- Only displaying first category following current ui design TODO: find a way to support displaying all categories -->
+        {{ if eq $index 0 }}
+        <div class="tile__category"><a href="{{ $category.Permalink }}">{{ $category.LinkTitle }}</a></div>
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+        <div class="tile__date">
+          {{ $page.Date.Format "Jan 2, 2006" }}
+        </div>
+    </div>
+  </div>
+  {{- with $page.Params.cover -}}
+  <div class="tile__cover">
+    <a class="tile__link" href="{{ $page.Permalink }}">
+      {{- $image := resources.Get $page.Params.cover -}}
+      {{- with $image -}}
+      <!-- Resizing Image -->
+      {{- $image := $image.Resize "x200" -}}
+      <img class="tile__image" src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}">
+      {{- else -}}
+      <img class="tile__image" src="{{ $page.Params.cover }}" alt="{{ $page.Title }}">
+      {{- end -}}
+    </a>
+  </div>
+  {{- end -}}
+</div>
