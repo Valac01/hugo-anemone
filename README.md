@@ -1,5 +1,34 @@
 # Hugo theme Anemone
 
+## Installation
+
+I recommend using `git subtree` to add the theme repository inside your own website. For this you need to have your website initialized as a git repository.
+
+- To setup as a subtree execute these commands
+
+```bash
+# Add hugo-anemone as a remote
+git remote add -f hugo-anemone https://github.com/Valac01/hugo-anemone.git
+
+# Add as a subtree
+git subtree add --prefix themes/hugo-anemone hugo-anemone main --squash
+```
+
+If you want to update the theme to the latest commit then pull from the remote
+
+```bash
+# pulling latest commit
+git subtree pull --prefix themes/hugo-anemone hugo-anemone main --squash
+```
+
+Other wise you can just download the theme as a `.zip` file and extract the contents inside your `themes/hugo-anemone` folder
+
+- Update your `config` file to use `hugo-anemone` as a theme
+
+```toml
+theme = 'hugo-anemone'
+```
+
 ## Run development
 
 ```bash
