@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Anemone"
-theme = "Anemone"
+theme = "hugo-anemone"
 copyright = "Anemone."
 
 enableRobotsTXT = true
