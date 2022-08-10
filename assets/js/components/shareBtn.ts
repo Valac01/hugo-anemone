@@ -1,5 +1,4 @@
-console.log("from shareBtn.ts");
-
+import { showToast } from './toast'
 const shareBtn = document.querySelector("#share-btn") as HTMLDivElement;
 
 if (!navigator.share && shareBtn) {
@@ -14,12 +13,10 @@ if (!navigator.share && shareBtn) {
   };
 
   shareBtn.addEventListener("click", async () => {
-    console.log("Pressed Share", shareData);
     try {
       await navigator.share(shareData);
-      console.log("Shared successfully");
     } catch (err) {
-      console.log("Error: " + err);
+      showToast("Some error occured while sharing. Try to manually share the link")
     }
   });
 }

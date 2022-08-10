@@ -1,5 +1,3 @@
-console.log("from navigation.ts");
-
 const mobNav = document.querySelector(".mobnav") as HTMLDivElement;
 const mobNavToggle = document.querySelector(".mobnav__toggle") as HTMLDivElement;
 const content = document.querySelector("#content") as HTMLDivElement;
