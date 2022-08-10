@@ -1,0 +1,25 @@
+.toast {
+  position: fixed;
+  display: none;
+  right: 0;
+  margin: 1rem 1.2rem;
+  padding: 1.2rem 1.4rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: 0.4rem;
+  &__dismiss {
+    position: absolute;
+    top: 0;
+    right: 0.2rem;
+    cursor: pointer;
+    padding: 0.1rem;
+    span {
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+  }
+  &--error {
+    background-color: var(--color-error);
+    color: var(--color-on-error);
+  }
+}
