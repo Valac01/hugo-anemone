@@ -3,9 +3,9 @@
 
 name = "Anemone"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/Valac01/hugo-anemone/blob/main/LICENSE"
 description = ""
-homepage = "http://example.com/"
+homepage = "https://github.com/Valac01/hugo-anemone"
 tags = []
 features = []
 min_version = "0.41.0"
