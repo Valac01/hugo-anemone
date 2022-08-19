@@ -106,16 +106,14 @@ Keep in mind resizing will increase the build times, but hugo caches the process
 
 ### Code highlight
 
-Theme is already shipped with `base16-snazzy` [chroma](https://github.com/alecthomas/chroma) style, in css.
-If you want to use a different [chroma](https://github.com/alecthomas/chroma) styles, then edit your `config` file.
+Hugo will generate code highlight automatically, which is `monokai` [chroma](https://github.com/alecthomas/chroma) style by default, to change from default styling configure the `markup.highlight.style` in you site `config` file. 
 
 ```toml
 [markup.highlight]
-noClasses = true
 style = "name of style"
 ```
 
-With `noClasses = true` you could even change styles per code blocks
+You could have different styles per code blocks
 
 ````markdown
 ```js {style="colorful"}
