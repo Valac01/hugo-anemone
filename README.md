@@ -70,6 +70,8 @@ To set your website favicon copy the file in `/static` folder, then add the path
   favicon = "/logo/favicon.ico" #use this for .ico files
   icon = "/logo/logo512.png" #use this for .png files
 ```
+
+## Features
 ### Custom Hero section
 
 create your own partial called `hero.html`
