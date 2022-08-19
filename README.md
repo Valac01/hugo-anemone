@@ -48,6 +48,10 @@ You can add or change default site settings in your site config file `config.tom
 └── config.toml
 ```
 
+Common settings
+
+- [Icon/favicon](#icons-and-favicons)
+
 Features
 
 - [Custom Hero section](#custom-hero-section)
@@ -55,6 +59,17 @@ Features
 - [Post Covers](#post-covers)
 - [Code highlight](#code-highlight)
 
+## Common settings
+
+### Icons and favicons
+
+To set your website favicon copy the file in `/static` folder, then add the path under `favicon` and `icon` params
+
+```toml
+[params]
+  favicon = "/logo/favicon.ico" #use this for .ico files
+  icon = "/logo/logo512.png" #use this for .png files
+```
 ### Custom Hero section
 
 create your own partial called `hero.html`

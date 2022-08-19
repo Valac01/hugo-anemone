@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <meta name="prefers-color-scheme" content="light">
+  {{- with site.Params.favicon -}}
+  <link rel="icon" href="{{ . }}" type="image/x-icon">
+  {{- end -}}
+  {{- with site.Params.icon -}}
+  <link rel="icon" href="{{ . }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ . }}" type="image/png">
+  {{- end -}}
   {{- define "title" -}}
     {{- $siteTitle := site.Title -}}
     {{- $pageTitle := .Page.Title -}}

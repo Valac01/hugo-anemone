@@ -15,6 +15,10 @@ style = "base16-snazzy"
   source = "static/covers"
   target = "assets/covers"
 
+[params]
+  favicon = "/logo/favicon.ico"
+  icon = "/logo/logo512.png"
+
 [[params.nav.custom]]
 title = "Home"
 url = "/"
