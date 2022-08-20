@@ -29,16 +29,6 @@ Other wise you can just download the theme as a `.zip` file and extract the cont
 theme = 'hugo-anemone'
 ```
 
-## Run development
-
-```bash
-# cd into example site for dummy pages
-cd exampleSite
-
-# Run hugo directing to themes directory
-hugo server -D --themesDir ../..
-```
-
 ## Site config file
 
 You can add or change default site settings in your site config file `config.toml` located in your `website-root` folder if not you can create it yourself. Every configuration settings can be [found here](https://gohugo.io/getting-started/configuration/)
@@ -51,6 +41,7 @@ You can add or change default site settings in your site config file `config.tom
 Common settings
 
 - [Icon/favicon](#icons-and-favicons)
+- [Brand Logo](#brand-logo)
 
 Features
 
@@ -69,6 +60,16 @@ To set your website favicon copy the file in `/static` folder, then add the path
 [params]
   favicon = "/logo/favicon.ico" #use this for .ico files
   icon = "/logo/logo512.png" #use this for .png files
+```
+
+### Brand Logo
+
+To set the logo of your website which is displayed on the navbar, set `params.logo` to the path of the file in `/static` folder.
+
+```toml
+[params]
+  logo = "/logo/navbar_logo.png"
+
 ```
 
 ## Features
@@ -146,4 +147,14 @@ Or using `highlight` partial
 {{<highlight js "style=colorful">}}
 ...code
 {{</highlight>}}
+```
+
+## Run development
+
+```bash
+# cd into example site for dummy pages
+cd exampleSite
+
+# Run hugo directing to themes directory
+hugo server -D --themesDir ../..
 ```

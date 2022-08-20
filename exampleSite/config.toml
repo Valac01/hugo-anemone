@@ -18,6 +18,7 @@ style = "base16-snazzy"
 [params]
   favicon = "/logo/favicon.ico"
   icon = "/logo/logo512.png"
+  logo = "/logo/navbar_logo.png"
 
 [[params.nav.custom]]
 title = "Home"

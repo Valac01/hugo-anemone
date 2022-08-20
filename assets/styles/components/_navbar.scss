@@ -8,15 +8,27 @@
   border-bottom-color: var(--color-outline);
   border-bottom-width: 1px;
   border-bottom-style: solid;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__brand {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    height: calc(#{$mob-nav-height} - 10px);
+    margin-right: 0.8rem;
+    img {
+      height: 100%;
+    }
+  }
   &__title {
     font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2ch;
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    
   }
   &__menu {
     @extend .sm-hide;
