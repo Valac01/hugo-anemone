@@ -6,10 +6,10 @@ license = "MIT"
 licenselink = "https://github.com/Valac01/hugo-anemone/blob/main/LICENSE"
 description = ""
 homepage = "https://github.com/Valac01/hugo-anemone"
-tags = []
+tags = ["blog"]
 features = []
-min_version = "0.41.0"
+min_version = "0.83.1"
 
 [author]
   name = "Barish Barla"
-  homepage = ""
+  homepage = "https://github.com/Valac01/"
